@@ -6,7 +6,7 @@ enableGitInfo = true
 # toml-docs-end main
 
 # additional settings
-baseURL = "https://63d21ef19d8b740cd4a6e11b--magical-torrone-3d2095.netlify.app/"
+baseURL = "https://magical-torrone-3d2095.netlify.app"
 canonifyURLs = false
 enableEmoji = true
 enableRobotsTXT = true
