@@ -1,4 +1,5 @@
 // Bootstrap variables overrides for theme
+$primary:                       $themeColor;
 $enable-negative-margins:       true;
 
 // Font awesome variables overrides for theme
@@ -14,6 +15,3 @@ $font-weight-light:             200 !default;
 $font-weight-normal:            300 !default;
 $font-weight-bold:              600 !default;
 $font-weight-bolder:            bolder !default;
-
-$black:                       #000 !default;
-$btn-toggle-color:              $black !default;

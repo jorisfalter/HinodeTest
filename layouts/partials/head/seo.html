@@ -1,10 +1,8 @@
-<!-- TODO: replace scratch with dict -->
-
 <!-- Adapted from doks -->
 {{ with .Title -}}
     {{ $.Scratch.Set "title" . -}}
 {{ else -}}
-    {{ $.Scratch.Set "title" .Site.Title -}}
+    {{ $.Scratch.Set "title" .Site.Params.title -}}
 {{ end -}}
 
 {{ with .Description -}}
@@ -13,7 +11,7 @@
     {{ with .Summary | plainify -}}
         {{ $.Scratch.Set "description" . -}}
     {{ else -}}
-        {{ $.Scratch.Set "description" .Site.Params.main.description -}}
+        {{ $.Scratch.Set "description" .Site.Params.description -}}
     {{ end -}}
 {{ end -}}
 
@@ -25,7 +23,7 @@
         {{ $.Scratch.Set "thumbnail" ($img.Permalink | absURL) -}}
     {{ end -}}
 {{ else -}}
-    {{ with .Site.Params.schema.image.url -}}    
+    {{ with .Site.Params.schemaImage -}}    
         {{ $.Scratch.Set "thumbnail" (. | absURL) -}}
     {{ else -}}
         {{ $images := $.Resources.ByType "image" -}}
@@ -36,7 +34,7 @@
         {{ with $featured -}}
             {{ $.Scratch.Set "thumbnail" $featured.Permalink -}}
         {{ else -}}
-            {{ with $.Site.Params.opengraph.images -}}
+            {{ with $.Site.Params.images -}}
                 {{ $.Scratch.Set "thumbnail" (index . 0 | absURL) -}}
             {{ end -}}
         {{ end -}}
@@ -56,11 +54,11 @@
   {{ end -}}
 {{ end -}}
 
-    {{ if .IsHome -}}
-        <title>{{ .Site.Title }} {{ .Site.Params.main.separator }} {{ .Site.Params.head.tagline }}</title>
-    {{ else -}}
-        <title>{{ .Site.Title }} {{ .Site.Params.main.separator }} {{ .Title }}</title>
-    {{ end -}}
+{{ if .IsHome -}}
+    <title>{{ .Site.Params.title }} {{ .Site.Params.titleSeparator }} {{ .Site.Params.titleAddition }}</title>
+{{ else -}}
+    <title>{{ .Site.Params.title }} {{ .Site.Params.titleSeparator }} {{ .Title }}</title>
+{{ end -}}
 
     <meta name="description" content="{{ $.Scratch.Get "description" }}">
 

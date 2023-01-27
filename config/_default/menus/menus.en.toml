@@ -4,36 +4,19 @@
   weight = 10
 
 [[main]]
-  name = "Docs"
-  url = "/docs/"
-  weight = 20
-
-[[main]]
   name = "Blog"
   url = "/blog/"
-  weight = 30
+  weight = 20
 
 [[main]]
   name = "Projects"
   url = "/projects/"
-  weight = 40
-
-[[main]]
-  name = "Sample project"
-  url = "/en/projects/sample-project/"
-  parent = "Projects"
-  weight = 1
-
-[[main]]
-  name = "Another project"
-  url = "/en/projects/another-project/"
-  parent = "Projects"
-  weight = 2
+  weight = 30
 
 [[main]]
   name = "Tags"
   url = "/tags/"
-  weight = 50
+  weight = 40
 
 [[social]]
   name = "LinkedIn"
@@ -52,27 +35,3 @@
   pre = "<i class=\"fab fa-medium fa-2x\"></i>"
   url = "https://medium.com/"
   weight = 30
-
-# toml-docs-start sample-navigation
-[[sample]]
-  name = "Blog"
-  url = "/blog/"
-  weight = 10
-
-[[sample]]
-  name = "Projects"
-  url = "/projects/"
-  weight = 20
-
-[[sample]]
-  name = "Sample project"
-  url = "/en/projects/sample-project/"
-  parent = "Projects"
-  weight = 1
-
-[[sample]]
-  name = "Another project"
-  url = "/en/projects/another-project/"
-  parent = "Projects"
-  weight = 2
-# toml-docs-end sample-navigation
